@@ -73,7 +73,7 @@ static void print_task(struct seq_file *file, struct task_struct *task) {
   } else {
     seq_printf(file, "task_struct structure: {\n");
     seq_printf(file, "  pid: %u,\n", task->pid);	
-    seq_printf(file, "  state: %u,\n", task->state);
+    seq_printf(file, "  state: %u,\n", task->__state);
     seq_printf(file, "  tgid: %u,\n", task->tgid);
     seq_printf(file, "  parent: %u,\n", task->parent);
     seq_printf(file, "}\n");
@@ -87,7 +87,7 @@ static void print_socket(struct seq_file *file, struct socket *sock) {
     seq_printf(file, "Can't find socket with this params\n"); 
   } else {
     seq_printf(file, "socket structure: {\n"); 
-    seq_printf(file, "  socket state: %u,\n", sock->__state);
+    seq_printf(file, "  socket state: %u,\n", sock->state);
     seq_printf(file, "  socket type: %u,\n", sock->type);
     seq_printf(file, "  socket flags: %u,\n", sock->flags);
   }
