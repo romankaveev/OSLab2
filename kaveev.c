@@ -87,7 +87,7 @@ static void print_socket(struct seq_file *file, struct socket *sock) {
     seq_printf(file, "Can't find socket with this params\n"); 
   } else {
     seq_printf(file, "socket structure: {\n"); 
-    seq_printf(file, "  socket state: %u,\n", sock->state);
+    seq_printf(file, "  socket state: %u,\n", sock->__state);
     seq_printf(file, "  socket type: %u,\n", sock->type);
     seq_printf(file, "  socket flags: %u,\n", sock->flags);
   }
